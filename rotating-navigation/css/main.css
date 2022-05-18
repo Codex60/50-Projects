@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;background-color:#333;
+color: #222; overflow-x: hidden;margin: 0;
+}
+.container{
+    background-color: #fafafa; transform-origin: top left;
+    transition: 100vw; width: 100vw; padding: 50px; min-height: 100vh;
+}
+.container.show-nav + nav li{
+    transform: translateX(0);transition-delay: 0.3s;
+}
+
+
+.circle-container{
+    position: fixed; top: -100px; left: -100px;
+}
+.circle{
+    background-color: #ff7979;height: 200px;width: 200px;
+    border-radius:50% ;position: relative;transition: 0.5s linear;
+}
+.container.show-nav .circle{
+    transform: rotate(-70deg);
+}
+.circle button{
+    cursor: pointer; position: absolute; top: 50%; left: 50%;
+    height: 100px; background: transparent; border:0;
+    font-size: 26px; color: #fff;
+}
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+nav{
+    position: fixed;bottom: 40px; left: 0;z-index: 100;
+}
+nav ul {
+    list-style-type:none ;padding-left: 30px;
+}
+nav ul li{
+    text-transform: uppercase;color: #fff;margin: 40px 0;
+    transition: transfrom 0.4s ease-in;
+   /* transform :translateX(-100%);*/
+}
+nav ul li i{
+    font-size:20px ;margin-right: 10px;
+}
+ nav ul li +li{
+     margin-left: 15px;
+     transform :translateX(-100%)
+ }
+
+ nav ul li + li + li{
+    margin-left: 30px;
+    transform :translateX(-200%)
+}
+.circle button:focus{
+ outline: none;
+}
+.circle button#open{
+    left: 60%;
+}
+.circle button#close{
+    top: 60%; transform: rotate(90deg);transform-origin: top left;
+    
+}
+.content img{
+    max-width: 50%;
+}
+.content {
+    max-width: 1000px;
+    margin: 50px auto;
+}
+.content small{
+    color: #555;
+    font-style: italic;
+}
+.content p{
+    color: #333;
+    line-height: 1.5;
+}
